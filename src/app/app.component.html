@@ -1,5 +1,5 @@
 {{ name }}
-<hello name="{{ name }}"></hello>
+<hello *ngIf="user.age >= 18; else under18" name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 <!-- {{expression}} -->
 <!-- String Interpolation -->
@@ -16,3 +16,10 @@
 <input type="text" [(ngModel)]="name" />
 
 <input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
+<br />
+<button (click)="user.age = user.age + 1">+</button>
+<button (click)="user.age = user.age - 1">-</button>
+
+<ng-template #under18>
+  <div>You are too</div>
+</ng-template>
