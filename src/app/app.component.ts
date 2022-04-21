@@ -10,6 +10,13 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
 
+  inputType = 'text';
+  // Data binding
+
+  //Event binding
+  handler(event) {
+    console.log('hihi', event);
+  }
   user = {
     name: 'Hieu',
     age: 22,

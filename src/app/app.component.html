@@ -1,6 +1,18 @@
+{{ name }}
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 <!-- {{expression}} -->
 <!-- String Interpolation -->
 <p>{{ user.name }}</p>
 <p>{{ user.age }}</p>
+
+<input type="text" [value]="user.age" />
+<!-- // HTMLInputElement{ type:'text', value: 'vass' } -->
+
+<!-- Envent Binding -->
+<button type="button" (click)="handler($event)">Click me</button>
+<br />
+<!-- Tow-way Binding -->
+<input type="text" [(ngModel)]="name" />
+
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
